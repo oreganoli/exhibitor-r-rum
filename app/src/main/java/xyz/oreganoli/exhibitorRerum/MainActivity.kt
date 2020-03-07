@@ -1,6 +1,7 @@
 package xyz.oreganoli.exhibitorRerum
 
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.koin.core.KoinComponent
@@ -18,8 +19,19 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             }
         }
         val postRepo: PostRepo by inject()
+
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.setVariable(BR.page, page.toString())
         binding.executePendingBindings()
+        findViewById<LinearLayout>(R.id.postContainer)!!.addView(
+            PostCard(
+                this, 0, "Dominus et servi", "Johannes Ørberg", """
+                Sacculus Iūlii nōn parvus est.
+                In sacculō eius est pecūnia.
+                Iūlius pecūniam in sacculō habet.
+            """.trimIndent(), 32
+            )
+        )
     }
 }

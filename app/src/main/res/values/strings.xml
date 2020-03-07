@@ -4,4 +4,9 @@
     <string name="nav_prev">Previous</string>
     <string name="nav_next">Next</string>
     <string name="nav_last">Last</string>
+    <string name="post_id_format">#%d</string>
+    <!-- The BUST IN SILHOUETTE emoji in the string above below might not display in Android Studio on Linux; stay away! -->
+    <string name="post_author_format">👤%s</string>
+    <!-- Ditto for SPEECH BALLOON -->
+    <string name="post_comment_count_format">💬 %d comments</string>
 </resources>
