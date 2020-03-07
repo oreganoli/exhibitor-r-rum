@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="@string/nav_first" />
+                    android:text="@string/nav_first" />
 
                 <Button
                     android:id="@+id/prevButton"
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="@string/nav_prev" />
+                    android:text="@string/nav_prev" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textStyle="bold"
-                    tools:text="@{page}" />
+                    android:text="@{page}" />
 
                 <Button
                     android:id="@+id/nextButton"
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="@string/nav_next" />
+                    android:text="@string/nav_next" />
 
                 <Button
                     android:id="@+id/lastButton"
@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    tools:text="@string/nav_last" />
+                    android:text="@string/nav_last" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
