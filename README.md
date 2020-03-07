@@ -1,2 +1,2 @@
 # exhibitor-rērum
-A weather app for a student course at the ING Bank of Silesia.
+A lorem-ipsum display app for a student course at the ING Bank of Silesia.
