@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Exhibitor Rērum</string>
+    <string name="nav_first">First</string>
+    <string name="nav_prev">Previous</string>
+    <string name="nav_next">Next</string>
+    <string name="nav_last">Last</string>
 </resources>
