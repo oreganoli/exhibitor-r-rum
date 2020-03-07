@@ -1,8 +1,7 @@
-package xyz.oreganoli.exhibitor_rerum
+package xyz.oreganoli.exhibitorRerum
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
