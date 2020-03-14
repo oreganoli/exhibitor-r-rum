@@ -55,6 +55,7 @@ class PostAdapter(val clickListener: PostListener) : ListAdapter<DataItem, Recyc
             fun from(parent: ViewGroup): TextViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val view = layoutInflater.inflate(R.layout.header, parent, false)
+                return TextViewHolder(view)
             }
         }
     }
@@ -99,6 +100,7 @@ class PostDiffCallback : DiffUtil.ItemCallback<DataItem>() {
     }
 }
 
+// TODO: Change onClick from postId to username and comment
 class PostListener(val clickListener: (postId: Long) -> Unit) {
     fun onClick(post: Post) = clickListener(post.postId)
 }
