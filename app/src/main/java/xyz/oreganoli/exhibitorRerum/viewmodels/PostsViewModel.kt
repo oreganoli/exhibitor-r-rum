@@ -1,25 +1,33 @@
 package xyz.oreganoli.exhibitorRerum.viewmodels
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import xyz.oreganoli.exhibitorRerum.database.getDatabase
+import xyz.oreganoli.exhibitorRerum.repository.PostsRepository
 
-class PostsViewModel : ViewModel() {
-    private val _username = MutableLiveData<>
-    val username: LiveData<>
-        get() = _username
+class PostsViewModel(application Application) : AndroidViewModel(application) {
 
-    private val _title = MutableLiveData<>
-    val title: LiveData<>
-        get() = _title
+    // Needed for cancel all coroutines
+    private var viewModelJob = SupervisorJob()
 
-    private val _body = MutableLiveData<>
-    val title: LiveData<>
-        get() = _body
+    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    private val _comments = MutableLiveData<>
-    val comments: LiveData<>
-        get() = _comments
+    private val database = getDatabase(application)
+    private val postsRepository = PostsRepository(database)
 
-    val commentsAmmo
+    init {
+        viewModelScope.launch {
+            postsRepository.refreshPosts()
+        }
+    }
+
+    val posts = postsRepository.posts
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }
