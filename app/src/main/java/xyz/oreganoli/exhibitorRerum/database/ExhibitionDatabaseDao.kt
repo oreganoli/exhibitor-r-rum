@@ -11,6 +11,11 @@ interface ExhibitionDatabaseDao {
     @Query("select * from databaseposts")
     fun getPosts(): LiveData<List<DatabasePosts>>
 
+    @Query("select * from databaseusers where userId = :key")
+    fun getUser(key: Long): User?
+
+    @Query("select * from databasecomments")
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun
 }
