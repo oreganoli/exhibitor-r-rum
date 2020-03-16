@@ -7,8 +7,52 @@
     app:startDestination="@id/fragment_posts">
 
     <fragment
-        android:id="@+id/exhibition"
-        android:name="xyz.oreganoli.exhibitorRerum.ui.PostsFragment"
+        android:id="@+id/fragment_posts"
+        android:name="xyz.oreganoli.exhibitorRerum.ui.fragments.PostsFragment"
         android:label="fragment_posts"
-        tools:layout="@layout/fragment_posts" />
+        tools:layout="@layout/fragment_posts">
+        <action
+            android:id="@+id/posts_to_comments"
+            app:destination="@id/fragment_comments" />
+        <action
+            android:id="@+id/posts_to_username"
+            app:destination="@id/fragment_user" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_user"
+        android:name="xyz.oreganoli.exhibitorRerum.ui.fragments.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/user_to_googlemaps" />
+        <action
+            android:id="@+id/user_to_images"
+            app:destination="@id/fragment_images" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_comments"
+        android:name="xyz.oreganoli.exhibitorRerum.ui.fragments.CommentsFragment"
+        android:label="fragment_comments"
+        tools:layout="@layout/fragment_comments">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_images"
+        android:name="xyz.oreganoli.exhibitorRerum.ui.fragments.ImagesFragment"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images">
+        <action
+            android:id="@+id/images_to_images_fullsize"
+            app:destination="@id/fragment_images_fullsize" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_images_fullsize"
+        android:name="xyz.oreganoli.exhibitorRerum.ui.fragments.ImagesFullsizeFragment"
+        android:label="fragment_images_fullsize"
+        tools:layout="@layout/fragment_images_fullsize">
+    </fragment>
+
 </navigation>
