@@ -1,5 +1,6 @@
 package xyz.oreganoli.exhibitorRerum.viewmodels
 
+import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -8,7 +9,7 @@ import kotlinx.coroutines.launch
 import xyz.oreganoli.exhibitorRerum.database.getDatabase
 import xyz.oreganoli.exhibitorRerum.repository.PostsRepository
 
-class PostsViewModel(application Application) : AndroidViewModel(application) {
+class PostsViewModel(application : Application) : AndroidViewModel(application) {
 
     // Needed for cancel all coroutines
     private var viewModelJob = SupervisorJob()
