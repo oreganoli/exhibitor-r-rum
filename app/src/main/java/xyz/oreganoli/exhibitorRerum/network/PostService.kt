@@ -1,16 +1,20 @@
-package xyz.oreganoli.exhibitorRerum
+package xyz.oreganoli.exhibitorRerum.network
 
 import android.util.Log
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
+import xyz.oreganoli.exhibitorRerum.API_URL
+import xyz.oreganoli.exhibitorRerum.Deser
 import xyz.oreganoli.exhibitorRerum.domain.Post
 
-class PostService : PostRepo {
+class PostService// get data from the net on construction
+    (deser: Deser) :
+    PostRepo {
     var posts: List<Post> = listOf()
     var downloading = false
 
-    constructor(deser: Deser) {
-        download(deser) // get data from the net on construction
+    init {
+        download(deser)
     }
 
     override fun getAll(): List<Post> {

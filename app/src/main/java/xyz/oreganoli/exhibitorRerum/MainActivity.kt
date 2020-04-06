@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import xyz.oreganoli.exhibitorRerum.databinding.ActivityMainBinding
+import xyz.oreganoli.exhibitorRerum.network.PostRepo
 
 class MainActivity : AppCompatActivity(), KoinComponent {
     private var page = 1

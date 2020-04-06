@@ -1,5 +1,6 @@
-package xyz.oreganoli.exhibitorRerum
+package xyz.oreganoli.exhibitorRerum.network
 
+import xyz.oreganoli.exhibitorRerum.Deser
 import xyz.oreganoli.exhibitorRerum.domain.Post
 
 
