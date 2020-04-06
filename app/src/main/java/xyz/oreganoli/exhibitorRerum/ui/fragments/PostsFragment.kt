@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+//import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import xyz.oreganoli.exhibitorRerum.R
-import xyz.oreganoli.exhibitorRerum.adapters.PostAdapter
-import xyz.oreganoli.exhibitorRerum.viewmodels.PostsViewModel
-import xyz.oreganoli.exhibitorRerum.viewmodels.factories.PostsViewModelFactory
+//import xyz.oreganoli.exhibitorRerum.adapters.PostAdapter
+//import xyz.oreganoli.exhibitorRerum.databinding.FragmentPostsBinding
+import xyz.oreganoli.exhibitorRerum.ui.viewmodels.PostsViewModel
+import xyz.oreganoli.exhibitorRerum.ui.viewmodels.factories.PostsViewModelFactory
 
-class PostsFragment : Fragment() {
+/*class PostsFragment : Fragment() {
     private val viewModel: PostsViewModel by lazy {
         val activity = requireNotNull(this.activity) {
 
@@ -23,24 +24,27 @@ class PostsFragment : Fragment() {
 
     private var viewModelAdapter: PostAdapter? = null
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding: FragmentPostsBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_posts,
             container,
             false)
-        binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.viewModel = viewModel
+        val application = requireNotNull(this.activity).application
 
-        binding.post.adapter = viewModelAdapter
+        //val dataSource = PostRepository()
+
+        //binding.lifecycleOwner = viewLifecycleOwner
+
+        //binding.viewModel = viewModel
+
+        //binding.post.adapter = viewModelAdapter
+
+        return binding.root
     }
-}
+}*/

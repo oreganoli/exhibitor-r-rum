@@ -5,10 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import xyz.oreganoli.exhibitorRerum.models.Post
-import xyz.oreganoli.exhibitorRerum.databinding.PostItemBinding
+import xyz.oreganoli.exhibitorRerum.domain.Post
 
-class PostAdapter(val clickListener: PostListener) :
+/*class PostAdapter(val clickListener: PostListener) :
     ListAdapter<Post, PostAdapter.ViewHolder>(PostDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,7 +24,7 @@ class PostAdapter(val clickListener: PostListener) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(clickListener: PostListener, item: Post) {
-            binding.post = item
+            //binding.post = item
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
@@ -44,7 +43,7 @@ class PostAdapter(val clickListener: PostListener) :
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
         // TODO: Should check all
-        return oldItem.postId == newItem.postId
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
@@ -54,6 +53,6 @@ class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
 }
 
 // TODO: Change onClick from postId to username and comment
-class PostListener(val clickListener: (postId: Long) -> Unit) {
-    fun onClick(post: Post) = clickListener(post.postId)
-}
+class PostListener(val clickListener: (postId: Int) -> Unit) {
+    fun onClick(post: Post) = clickListener(post.id)
+}*/

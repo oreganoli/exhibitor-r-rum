@@ -1,4 +1,4 @@
-package xyz.oreganoli.exhibitorRerum.viewmodels
+package xyz.oreganoli.exhibitorRerum.ui.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
