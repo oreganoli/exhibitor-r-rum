@@ -1,5 +1,7 @@
 package xyz.oreganoli.exhibitorRerum
 
+import xyz.oreganoli.exhibitorRerum.domain.Post
+
 
 interface PostRepo {
     /**

@@ -3,6 +3,7 @@ package xyz.oreganoli.exhibitorRerum
 import android.util.Log
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
+import xyz.oreganoli.exhibitorRerum.domain.Post
 
 class PostService : PostRepo {
     var posts: List<Post> = listOf()
